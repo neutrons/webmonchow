@@ -5,10 +5,6 @@ This repository is a template repository for Python projects under neutrons.
 After you create a new repository using this repo as template, please follow the following steps to adjust it for the new project.
 
 
-
-5. Having code coverage, `codecov.yaml` is **strongly recommended**, please refer to [Code coverage](https://coverage.readthedocs.io/en/coverage-5.5/) for more information.
-
-
 6. Adjust the demo Github action yaml files for CI/CD. For more information about Github action, please refer to [Github action](https://docs.github.com/en/actions).
 
     6.1 Specify package name at: .github/workflows/package.yml#L34
