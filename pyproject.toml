@@ -48,7 +48,7 @@ exclude = ["tests*", "scripts*", "docs*", "notebooks*"]
 "*" = ["*.json", "*.yml","*.yaml","*.ini"]
 
 [project.scripts]
-broadcast_messages = "webmonchow.amq.broadcast:main"
+broadcast_amq = "webmonchow.amq.broadcast:main"
 broadcast_pv = "webmonchow.pv.broadcast:main"
 
 [tool.pytest.ini_options]
