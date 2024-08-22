@@ -12,7 +12,7 @@
 {% set build_number = 0 %}
 
 package:
-  name: mypackagename
+  name: webmonchow
   version: {{ version_number }}
 
 source:
@@ -26,7 +26,7 @@ build:
 
 requirements:
   host:
-    - python
+    - python>=3.10
     - versioningit
     - setuptools>=42
     - wheel
@@ -36,7 +36,10 @@ requirements:
     - versioningit
 
   run:
-    - python
+    - python>=3.10
+    - psycopg2
+    - stomp.py
+
 
 about:
   home: {{ url }}
