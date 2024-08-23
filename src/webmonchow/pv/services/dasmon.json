@@ -50,10 +50,10 @@
       "name": "SF2",
       "function": "random.choice([0, 1])"
     },
-    {"frequency": 1,
+    {"frequency": 6,
       "instrument": "REF_M",
       "name": "SampleTemperature",
-      "function": "273 + 100*({x}/60-math.floor(0.5+{x}/60)"
+      "function": "273+100*({x}/60-math.floor(0.5+{x}/60))"
     }
   ],
   "pvStringUpdate": [
