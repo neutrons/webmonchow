@@ -34,6 +34,26 @@
       "instrument": "ARCS",
       "name": "LKS1C",
       "function": "282+math.sin({x}/300)+random.random()"
+    },
+    {"frequency": 1,
+      "instrument": "REF_M",
+      "name": "MagneticField",
+      "function": "100*math.sin({x}/300)+random.random()"
+    },
+    {"frequency": 60,
+      "instrument": "REF_M",
+      "name": "SF1",
+      "function": "random.choice([0, 1])"
+    },
+    {"frequency": 60,
+      "instrument": "REF_M",
+      "name": "SF2",
+      "function": "random.choice([0, 1])"
+    },
+    {"frequency": 1,
+      "instrument": "REF_M",
+      "name": "SampleTemperature",
+      "function": "273 + 100*({x}/60-math.floor(0.5+{x}/60)"
     }
   ],
   "pvStringUpdate": [

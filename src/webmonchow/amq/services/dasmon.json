@@ -15,7 +15,7 @@
         "status": "0"}}
   ],
   "/topic/SNS.HYSA.APP.DASMON": [
-    {"frequency": 1,
+    {"frequency": 10,
       "message":
       {"monitors": {"1": 100, "2": 2000},
         "count_rate": 9000,
@@ -26,7 +26,7 @@
     }
   ],
   "/topic/SNS.ARCS.APP.DASMON": [
-    {"frequency": 1,
+    {"frequency": 10,
       "message":
       {"monitors": {"1": 0, "2": 0},
         "count_rate": 0,
@@ -44,16 +44,22 @@
     }
   ],
   "/topic/SNS.REF_M.APP.DASMON": [
-    {"frequency": 1,
+    {"frequency": 10,
       "message":
       {"monitors": {"1": 0, "2": 0, "8":  0},
         "count_rate": 0,
         "has_states_count": 0,
-
-        "run_number": 12345,
-        "proposal_id": 42,
-        "run_title": "last run for REF_M",
-        "recording": true}
+        "paused": false,
+        "recording": false,
+        "scan_index": 0,
+        "scanning": false,
+        "system_dasmon": 0,
+        "system_postprocessing": "Created REF_M reduction script",
+        "system_pvsd": 0,
+        "total_charge": 3.03988e+10,
+        "total_counts": 111735,
+        "total_time": 2993.14
+      }
     }
   ]
 }
