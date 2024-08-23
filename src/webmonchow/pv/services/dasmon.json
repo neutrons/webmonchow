@@ -1,46 +1,46 @@
 {
-    "pvUpdate": [
-	{"frequency": 1,
-	 "instrument": "HYSA",
-	 "name": "sinPV",
-	 "function": "100*math.sin({x}/3600)"
-	},
-	{"frequency": 2,
-	 "instrument": "HYSA",
-	 "name": "sawtoothPV",
-	 "function": "{x}%600"
-	},
-	{"frequency": 1,
-	 "instrument": "ARCS",
-	 "name": "BL18:SE:SampleTemp",
-	 "function": "300+10*math.sin({x}/300)+random.random()*2"
-	},
-	{"frequency": 1,
-	 "instrument": "ARCS",
-	 "name": "chopper3_TDC",
-	 "function": "random.choice([2.09e6, 7.65e6, 1.32e7])"
-	},
-	{"frequency": 1,
-	 "instrument": "ARCS",
-	 "name": "LKS1A",
-	 "function": "490+10*math.sin({x}/300)+random.random()"
-	},
-	{"frequency": 1,
-	 "instrument": "ARCS",
-	 "name": "LKS1B",
-	 "function": "325+math.sin({x}/300)+random.random()"
-	},
-	{"frequency": 1,
-	 "instrument": "ARCS",
-	 "name": "LKS1C",
-	 "function": "282+math.sin({x}/300)+random.random()"
-	}
-    ],
-    "pvStringUpdate": [
-	{"frequency": 1,
-	 "instrument": "HYSA",
-	 "name": "xString",
-	 "function": "'x = {x} seconds'"
-	}
-    ]
+  "pvUpdate": [
+    {"frequency": 1,
+      "instrument": "HYSA",
+      "name": "sinPV",
+      "function": "100*math.sin({x}/3600)"
+    },
+    {"frequency": 2,
+      "instrument": "HYSA",
+      "name": "sawtoothPV",
+      "function": "{x}%600"
+    },
+    {"frequency": 1,
+      "instrument": "ARCS",
+      "name": "BL18:SE:SampleTemp",
+      "function": "300+10*math.sin({x}/300)+random.random()*2"
+    },
+    {"frequency": 1,
+      "instrument": "ARCS",
+      "name": "chopper3_TDC",
+      "function": "random.choice([2.09e6, 7.65e6, 1.32e7])"
+    },
+    {"frequency": 1,
+      "instrument": "ARCS",
+      "name": "LKS1A",
+      "function": "490+10*math.sin({x}/300)+random.random()"
+    },
+    {"frequency": 1,
+      "instrument": "ARCS",
+      "name": "LKS1B",
+      "function": "325+math.sin({x}/300)+random.random()"
+    },
+    {"frequency": 1,
+      "instrument": "ARCS",
+      "name": "LKS1C",
+      "function": "282+math.sin({x}/300)+random.random()"
+    }
+  ],
+  "pvStringUpdate": [
+    {"frequency": 1,
+      "instrument": "HYSA",
+      "name": "xString",
+      "function": "'x = {x} seconds'"
+    }
+  ]
 }

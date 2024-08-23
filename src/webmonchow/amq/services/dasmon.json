@@ -1,41 +1,59 @@
 {
-    "/topic/SNS.HYSA.STATUS.DASMON": [
-	{"frequency": 2,
-	 "message": {"src_name": "dasmon",
-		     "status": "0"}}
-    ],
-    "/topic/SNS.ARCS.STATUS.DASMON": [
-	{"frequency": 2,
-	 "message": {"src_name": "dasmon",
-		     "status": "0"}}
-    ],
-    "/topic/SNS.HYSA.APP.DASMON": [
-	{"frequency": 1,
-	 "message":
-	 {"monitors": {"1": 100, "2": 2000},
-	  "count_rate": 9000,
-	  "run_number": 324,
-	  "proposal_id": 12345,
-	  "run_title": "This is the run title",
-	  "recording": true}
-	}
-    ],
-    "/topic/SNS.ARCS.APP.DASMON": [
-	{"frequency": 1,
-	 "message":
-	 {"monitors": {"1": 0, "2": 0},
-	  "count_rate": 0,
-	  "run_number": 0,
-	  "proposal_id": 27800,
-	  "run_title": "test",
-	  "recording": false,
-	  "has_states_count": 0,
-	  "paused": false,
-	  "scan_index": 0,
-	  "scanning": false,
-	  "total_charge": 0,
-	  "total_counts": 0,
-	  "total_time": 27.1008}
-	}
-    ]
+  "/topic/SNS.HYSA.STATUS.DASMON": [
+    {"frequency": 2,
+      "message": {"src_name": "dasmon",
+        "status": "0"}}
+  ],
+  "/topic/SNS.ARCS.STATUS.DASMON": [
+    {"frequency": 2,
+      "message": {"src_name": "dasmon",
+        "status": "0"}}
+  ],
+  "/topic/SNS.REF_M.STATUS.DASMON": [
+    {"frequency": 2,
+      "message": {"src_name": "dasmon",
+        "status": "0"}}
+  ],
+  "/topic/SNS.HYSA.APP.DASMON": [
+    {"frequency": 1,
+      "message":
+      {"monitors": {"1": 100, "2": 2000},
+        "count_rate": 9000,
+        "run_number": 324,
+        "proposal_id": 12345,
+        "run_title": "This is the run title",
+        "recording": true}
+    }
+  ],
+  "/topic/SNS.ARCS.APP.DASMON": [
+    {"frequency": 1,
+      "message":
+      {"monitors": {"1": 0, "2": 0},
+        "count_rate": 0,
+        "run_number": 0,
+        "proposal_id": 27800,
+        "run_title": "test",
+        "recording": false,
+        "has_states_count": 0,
+        "paused": false,
+        "scan_index": 0,
+        "scanning": false,
+        "total_charge": 0,
+        "total_counts": 0,
+        "total_time": 27.1008}
+    }
+  ],
+  "/topic/SNS.REF_M.APP.DASMON": [
+    {"frequency": 1,
+      "message":
+      {"monitors": {"1": 0, "2": 0, "8":  0},
+        "count_rate": 0,
+        "has_states_count": 0,
+
+        "run_number": 12345,
+        "proposal_id": 42,
+        "run_title": "last run for REF_M",
+        "recording": true}
+    }
+  ]
 }

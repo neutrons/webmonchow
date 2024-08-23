@@ -1,12 +1,12 @@
 {
-    "/topic/SNS.HYSA.STATUS.PVSD": [
-	{"frequency": 0.2,
-	 "message": {"src_name": "pvstreamer",
-		     "status": "0"}}
-    ],
-    "/topic/SNS.ARCS.STATUS.PVSD": [
-	{"frequency": 0.2,
-	 "message": {"src_name": "pvsd",
-		     "status": "0"}}
-    ]
+  "/topic/SNS.HYSA.STATUS.PVSD": [
+    {"frequency": 0.2,
+      "message": {"src_name": "pvstreamer",
+        "status": "0"}}
+  ],
+  "/topic/SNS.ARCS.STATUS.PVSD": [
+    {"frequency": 0.2,
+      "message": {"src_name": "pvsd",
+        "status": "0"}}
+  ]
 }
