@@ -65,6 +65,6 @@ markers = [
 
 [tool.ruff]
 line-length = 120
-select = ["A", "ARG","ASYNC","BLE","C90", "E", "F", "I", "N", "UP032", "W"]
+lint.select = ["A", "ARG","ASYNC","BLE","C90", "E", "F", "I", "N", "UP032", "W"]
 
 # Add additional 3rd party tool configuration here as needed

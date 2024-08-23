@@ -1,4 +1,4 @@
-name: unit-test
+name: all-tests
 
 on:
   workflow_dispatch:
@@ -26,9 +26,9 @@ jobs:
       - name: install additional dependencies
         run: |
           echo "installing additional dependencies if cannot be installed from conda"
-      - name: run unit tests
+      - name: run tests
         run: |
-          echo "running unit tests"
+          echo "running unit and integration tests"
           python -m pytest --cov=src --cov-report=xml --cov-report=term-missing tests/
       - name: upload coverage to codecov
         uses: codecov/codecov-action@v4
