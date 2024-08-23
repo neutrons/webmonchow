@@ -47,9 +47,7 @@ The default content files:
 - `translation.json <https://github.com/neutrons/webmonchow/blob/next/src/webmonchow/amq/services/translation.json>`_:
   messages indicating that certain runs are ready for auto-reduction (post-processing).
   In the local deployment of `data_workflow`, these messages are sent to the AMQ broker
-  and will remain there since there is no post-processing service listening to them.
-
-
+  and will remain there until picked by the `autoreducer` service.
 
 
 Message format
