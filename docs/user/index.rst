@@ -9,7 +9,7 @@ User Documentation
 
 Webmonchow mimics three services (translation, pvsd, dasmon) that generate AMQ messages
 and process variables (PV) updates.
-These services provide the feed to two of the components spawned by the
+These services provide the feed to three of the components spawned by the
 `data_workflow <https://github.com/neutrons/data_workflow>`_ package, namely the
 *workflow-manager*, the *dasmon-listener*, and the *PostrgreSQL database*.
 
