@@ -73,23 +73,6 @@ def message_generator(data):
         count += 1
 
 
-def broadcast(connection, message_gen):
-    """
-    Sends messages to specified AMQ queues or topics using an established connection.
-
-    Parameters
-    ----------
-    connection : stomp.Connection
-        An active connection to the AMQ message broker.
-    message_gen : generator
-        A python generator that yields tuples containing the destination queue or topic and the message to be sent.
-        The generator yields messages at specified intervals based on their assigned frequency.
-    """
-    for queue_or_topic, message in message_gen:
-        print(f"Sending {message} to {queue_or_topic}")
-        connection.send(queue_or_topic, json.dumps(message))
-
-
 def connect_to_broker(broker, user, password):
     """
     Creates and returns a connection to an AMQ broker.
@@ -115,6 +98,23 @@ def connect_to_broker(broker, user, password):
     )
     conn.connect(user, password, wait=True)
     return conn
+
+
+def broadcast(connection, message_gen):
+    """
+    Sends messages to specified AMQ queues or topics using an established connection.
+
+    Parameters
+    ----------
+    connection : stomp.Connection
+        An active connection to the AMQ message broker.
+    message_gen : generator
+        A python generator that yields tuples containing the destination queue or topic and the message to be sent.
+        The generator yields messages at specified intervals based on their assigned frequency.
+    """
+    for queue_or_topic, message in message_gen:
+        print(f"Sending {message} to {queue_or_topic}")
+        connection.send(queue_or_topic, json.dumps(message))
 
 
 def get_options(argv):
