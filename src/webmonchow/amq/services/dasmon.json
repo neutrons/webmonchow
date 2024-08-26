@@ -1,16 +1,16 @@
 {
   "/topic/SNS.HYSA.STATUS.DASMON": [
-    {"frequency": 2,
+    {"frequency": 10,
       "message": {"src_name": "dasmon",
         "status": "0"}}
   ],
   "/topic/SNS.ARCS.STATUS.DASMON": [
-    {"frequency": 2,
+    {"frequency": 10,
       "message": {"src_name": "dasmon",
         "status": "0"}}
   ],
   "/topic/SNS.REF_M.STATUS.DASMON": [
-    {"frequency": 2,
+    {"frequency": 10,
       "message": {"src_name": "dasmon",
         "status": "0"}}
   ],
