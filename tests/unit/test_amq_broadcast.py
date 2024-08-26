@@ -67,7 +67,7 @@ def test_get_options_default():
     assert options.user == "icat"
     assert options.password == "icat"
     assert options.broker == "localhost:61613"
-    file_names = [os.path.basename(filename) for filename in options.content_files]
+    file_names = [os.path.basename(filename) for filename in options.content_files.split(",")]
     assert sorted(file_names) == ["dasmon.json", "pvsd.json", "translation.json"]
 
 

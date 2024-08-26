@@ -89,7 +89,7 @@ def test_get_options_default():
     assert options.host == "localhost"
     assert options.port == "5432"
     assert options.database == "workflow"
-    assert options.pv_files[0].endswith("services/dasmon.json")
+    assert os.path.basename(options.pv_files) == "dasmon.json"
 
 
 def test_get_options():
