@@ -127,7 +127,7 @@ def get_options(argv):
         "-m",
         help="List of content files to broadcast, separated by comma.",
         dest="content_files" "",
-        default=service_content_files(),
+        default=",".join(service_content_files()),
     )
     options = parser.parse_args(argv)
     return options

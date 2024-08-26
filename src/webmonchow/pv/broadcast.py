@@ -134,9 +134,8 @@ def get_options(argv):
     parser.add_argument("--database-name", dest="database", default=os.getenv("DATABASE_NAME", "workflow"))
     parser.add_argument(
         "--pv-files",
-        "-f",
         dest="pv_files",
-        default=service_content_files(),
+        default=",".join(service_content_files()),
         help="List of content files to broadcast, separated by commas",
     )
     options = parser.parse_args(argv)
