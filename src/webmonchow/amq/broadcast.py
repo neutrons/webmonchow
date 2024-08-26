@@ -57,7 +57,7 @@ def message_generator(data):
     tuple
         A tuple containing the destination queue or topic, and message to send.
     """
-    time_step = 0.5  # in seconds. Maximum frequency for any message to be sent
+    time_step = 1.0  # in seconds. Maximum frequency for any message to be sent
     count = 0
     while True:
         for queue_or_topic, programmes in data.items():

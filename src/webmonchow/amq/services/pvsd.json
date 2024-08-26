@@ -1,16 +1,16 @@
 {
   "/topic/SNS.HYSA.STATUS.PVSD": [
-    {"frequency": 1,
+    {"frequency": 10,
       "message": {"src_name": "pvstreamer",
         "status": "0"}}
   ],
   "/topic/SNS.ARCS.STATUS.PVSD": [
-    {"frequency": 1,
+    {"frequency": 10,
       "message": {"src_name": "pvsd",
         "status": "0"}}
   ],
   "/topic/SNS.REF_M.STATUS.PVSD": [
-    {"frequency": 1,
+    {"frequency": 10,
       "message": {"src_name": "pvsd",
         "status": "0"}}
   ]
