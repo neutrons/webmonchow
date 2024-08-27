@@ -177,7 +177,7 @@ With pip from the source repository:
 
 .. code-block:: bash
 
-   $> pip install git+https://github.com/neutrons/webmonchow.git@v1.0.0#egg=webmonchow  # install version 1.0.0
+   $> pip install git+https://github.com/neutrons/webmonchow.git@v1.0.0#egg=webmonchow  # install tag v1.0.0
    $> pip install git+https://github.com/neutrons/webmonchow.git@next#egg=webmonchow  # install tip of development
 
 
@@ -191,20 +191,21 @@ The Dockerfile:
 
 .. code-block:: Dockerfile
 
-   FROM continuumio/miniconda3:4.12.0
-   RUN conda install -c conda-forge postgresql=14
-   RUN conda install -c neutrons webmonchow
-   CMD broadcast_pv & broadcast_amq --broker "activemq:61613" & wait
+   FROM continuumio/miniconda3:23.3.1-0
+   RUN conda install --yes -n base conda-libmamba-solver
+   RUN conda install --yes --solver=libmamba -n base -c conda-forge -c neutrons postgresql=14 webmonchow=1.0.0
+   CMD ["sh", "-c", "broadcast_pv & broadcast_amq --broker \"activemq:61613\" & wait"]
 
 If you are testing new features of webmonchow not yet released,
 you can modify the Dockerfile to install the package from the feature branch of your source repository:
 
 .. code-block:: Dockerfile
 
-   FROM continuumio/miniconda3:4.12.0
-   RUN conda install -c conda-forge postgresql=14
+   FROM continuumio/miniconda3:23.3.1-0
+   RUN conda install --yes -n base conda-libmamba-solver
+   RUN conda install --yes --solver=libmamba -n base -c conda-forge postgresql=14
    RUN python -m pip install git+https://github.com/neutrons/webmonchow.git@MYFEATUREBRANCH#egg=webmonchow
-   CMD broadcast_pv & broadcast_amq --broker "activemq:61613" & wait
+   CMD ["sh", "-c", "broadcast_pv & broadcast_amq --broker \"activemq:61613\" & wait"]
 
 Service `webmonchow` needs to be included in the
 `docker-compose.yml <https://github.com/neutrons/data_workflow/blob/next/docker-compose.yml>`_
@@ -213,17 +214,19 @@ file of the `data_workflow` package:
 .. code-block:: yaml
 
    webmonchow:
-   restart: always
-   build:
-     context: .
-     dockerfile: Dockerfile.webmonchow
-   env_file:
-     - .env
-   depends_on:
-     db:
-       condition: service_healthy
-     webmon:
-       condition: service_healthy
+     restart: always
+     build:
+       context: .
+       dockerfile: Dockerfile.webmonchow
+     env_file:
+       - .env
+     depends_on:
+       db:
+         condition: service_healthy
+       webmon:
+         condition: service_healthy
+       activemq:
+         condition: service_healthy
 
 Adding a new Instrument
 -----------------------
