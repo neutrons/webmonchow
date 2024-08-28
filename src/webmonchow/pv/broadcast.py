@@ -99,7 +99,7 @@ def broadcast(conn, pv_gen):
         conn.commit()
 
 
-def connect_to_database(database, user, password, host, port):
+def connect_to_database(database, user, password, host, port, attempts=None, interval=5.0):
     """
     Establishes a connection to a PostgreSQL database.
 
@@ -115,14 +115,31 @@ def connect_to_database(database, user, password, host, port):
         The host address of the database.
     port : str
         The port number on which the database is listening.
+    attempts : Optional[int]
+        The number of attempts to connect to the broker. If None, the connection will be attempted indefinitely.
+    interval : float
+        The time interval between connection attempts.
 
     Returns
     -------
     psycopg2.extensions.connection
         A connection object to the PostgreSQL database.
+
+    Raises
+    ------
+    psycopg2.OperationalError
+        If the connection fails after the specified number of attempts.
     """
-    conn = psycopg2.connect(database=database, user=user, password=password, host=host, port=port)
-    return conn
+    attempt_number = 0
+    while attempts is None or attempt_number < attempts:
+        try:
+            conn = psycopg2.connect(database=database, user=user, password=password, host=host, port=port)
+            return conn
+        except psycopg2.OperationalError as e:
+            attempt_number += 1
+            print(f"Failed to connect to database after {attempt_number} attempts: {e}")
+            time.sleep(interval)
+    raise psycopg2.OperationalError(f"Failed to connect to database after {attempts} attempts.")
 
 
 def get_options(argv):

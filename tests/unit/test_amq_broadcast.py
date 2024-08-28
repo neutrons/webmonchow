@@ -1,14 +1,17 @@
 # standard imports
 import json
 import os
+from unittest import TestCase
 from unittest.mock import mock_open, patch
 
 # third-party imports
 import pytest
+import stomp
 
 # webmonchow imports
 from webmonchow.amq.broadcast import (
     broadcast,
+    connect_to_broker,
     get_options,
     message_generator,
     read_contents,
@@ -50,6 +53,29 @@ def test_message_generator():
     assert next(gen) == ("queue1", "msg1")
     assert next(gen) == ("queue1", "msg1")
     assert next(gen) == ("queue2", "msg2")
+
+
+class TestConnectToBroker(TestCase):
+    @patch("stomp.Connection")
+    def test_connects_successfully(self, mock_connection):
+        mock_conn = mock_connection.return_value
+        mock_conn.connect.return_value = mock_conn
+
+        broker = "localhost:61613"
+        user = "user"
+        password = "password"
+        conn = connect_to_broker(broker, user, password)
+
+        self.assertEqual(conn, mock_conn)
+        mock_conn.connect.assert_called_once_with(user, password, wait=True)
+
+    def test_fails_and_exceeds_attempts(self):
+        broker = "localhost:61613"
+        user = "user"
+        password = "password"
+        with pytest.raises(stomp.exception.ConnectFailedException) as e:
+            connect_to_broker(broker, user, password, attempts=2, interval=1.0)
+        assert str(e.value) == "Failed to connect to broker after 2 attempts."
 
 
 def test_broadcast():
