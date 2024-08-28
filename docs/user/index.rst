@@ -18,6 +18,16 @@ These services provide the feed to three of the components spawned by the
     :align: center
     :alt: layout of webmonchow
 
+Deployments
+-----------
+Webmonchow is deployed as a service in a Docker container,
+either in the local or test environments of the Web Monitor application.
+
+.. image:: ../media/deployment_workflow.png
+    :width: 999px
+    :align: center
+    :alt: layout of webmonchow
+
 
 Entry Points
 ------------
