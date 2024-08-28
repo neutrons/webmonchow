@@ -109,6 +109,7 @@ def connect_to_broker(broker, user, password, attempts=None, interval=5.0):
     while attempts is None or attempt_number < attempts:
         try:
             conn = conn.connect(user, password, wait=True)
+            print(f"Connected to {broker}")
             return conn
         except stomp.exception.ConnectFailedException as e:
             attempt_number += 1

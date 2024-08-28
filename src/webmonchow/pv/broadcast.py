@@ -134,6 +134,7 @@ def connect_to_database(database, user, password, host, port, attempts=None, int
     while attempts is None or attempt_number < attempts:
         try:
             conn = psycopg2.connect(database=database, user=user, password=password, host=host, port=port)
+            print(f"Connected to {database}")
             return conn
         except psycopg2.OperationalError as e:
             attempt_number += 1
