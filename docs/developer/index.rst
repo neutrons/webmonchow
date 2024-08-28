@@ -55,6 +55,16 @@ Locally running the units tests:
    $> conda activate webmonchow
    (webmonchow)$> pytest -v  tests/
 
+Listing the dependencies
+------------------------
+It is critical to list the dependencies both in the conda recipe `meta.yaml` and in the `pyproject.toml` file.
+The first ensures a successful build of the conda package,
+while the second enables us to install a feature branch of `webmonchow` in
+`service webmonchow <https://github.com/neutrons/data_workflow/blob/next/Dockerfile.webmonchow>`_
+of the `data_workflow` package.
+
+
+
 Building the python wheel
 -------------------------
 Locally building the python wheel. At the root of the repo:
