@@ -21,7 +21,8 @@ These services provide the feed to three of the components spawned by the
 Deployments
 -----------
 Webmonchow is deployed as a service in a Docker container,
-either in the local or test environments of the Web Monitor application.
+either in the local (http://localhost/)
+or test (http://webmon-test.ornl.gov) environments of the Web Monitor application.
 
 .. image:: ../media/deployment_workflow.png
     :width: 999px
