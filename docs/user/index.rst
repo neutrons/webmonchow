@@ -18,6 +18,17 @@ These services provide the feed to three of the components spawned by the
     :align: center
     :alt: layout of webmonchow
 
+Deployments
+-----------
+Webmonchow is deployed as a service in a Docker container,
+either in the local (http://localhost/)
+or test (http://webmon-test.ornl.gov) environments of the Web Monitor application.
+
+.. image:: ../media/deployment_workflow.png
+    :width: 999px
+    :align: center
+    :alt: layout of webmonchow
+
 
 Entry Points
 ------------
@@ -31,6 +42,8 @@ After installation, two executable scripts are available from the command line:
 Broadcast AMQ messages
 ----------------------
 Command `broadcast_amq` will connect to the default AMQ broker at `localhost:61613`.
+If the broker is not running, `broadcast_amq` will attempt to reconnect every 5 seconds indefinitely
+or until a prescribed number of attempts is reached.
 These settings can be changed by via the command line options (see `broadcast_amq --help`)
 
 Messages are generated from one or more content `json` files.
@@ -103,8 +116,10 @@ An example of the input `json` file is:
 
 Broadcast PV updates
 --------------------
-Command `broadcast_pv` will connect to the default postgresql database `localhost:5432` and
-send the PV updates defined in file
+Command `broadcast_pv` will connect to the default postgresql database `localhost:5432`.
+If the database is not running, `broadcast_pv` will attempt to reconnect every 5 seconds indefinitely
+or until a prescribed number of attempts is reached.
+Once connected, `broadcast_pv` will send the PV updates defined in file
 `PV dasmon.json <https://github.com/neutrons/webmonchow/blob/next/src/webmonchow/pv/services/dasmon.json>`_.
 
 These settings can be changed by via the command line options (see `broadcast_pv --help`)

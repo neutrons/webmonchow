@@ -4,6 +4,7 @@ import os
 from unittest.mock import MagicMock, mock_open, patch
 
 # third-party imports
+import psycopg2
 import pytest
 
 # webmonchow imports
@@ -61,6 +62,12 @@ def test_connect_to_database(mock_psycopg2_connect):
     mock_psycopg2_connect.assert_called_once_with(
         database="database", host="host", password="password", port="port", user="user"
     )
+
+
+def test_connect_to_database_fails():
+    with pytest.raises(psycopg2.OperationalError) as e:
+        connect_to_database("database", "user", "password", "host", "port", attempts=2, interval=1.0)
+    assert str(e.value) == "Failed to connect to database after 2 attempts."
 
 
 @patch("time.time")

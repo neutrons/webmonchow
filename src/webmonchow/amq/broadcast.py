@@ -73,7 +73,7 @@ def message_generator(data):
         count += 1
 
 
-def connect_to_broker(broker, user, password):
+def connect_to_broker(broker, user, password, attempts=None, interval=5.0):
     """
     Creates and returns a connection to an AMQ broker.
 
@@ -85,19 +85,37 @@ def connect_to_broker(broker, user, password):
         The username for the connection.
     password : str
         The password for the connection.
+    attempts : Optional[int]
+        The number of attempts to connect to the broker. If None, the connection will be attempted indefinitely.
+    interval : float
+        The time interval between connection attempts.
 
     Returns
     -------
     stomp.Connection
         An established connection.
+
+    Raises
+    ------
+    stomp.exception.ConnectFailedException
+        If the connection fails after the specified number of attempts.
     """
     conn = stomp.Connection(
         host_and_ports=[
             tuple(broker.split(":")),
         ]
     )
-    conn.connect(user, password, wait=True)
-    return conn
+    attempt_number = 0
+    while attempts is None or attempt_number < attempts:
+        try:
+            conn.connect(user, password, wait=True)
+            print(f"Connected to {broker}")
+            return conn
+        except stomp.exception.ConnectFailedException as e:
+            attempt_number += 1
+            print(f"Failed to connect to broker after {attempt_number} attempts: {e}")
+            time.sleep(interval)
+    raise stomp.exception.ConnectFailedException(f"Failed to connect to broker after {attempts} attempts.")
 
 
 def broadcast(connection, message_gen):
