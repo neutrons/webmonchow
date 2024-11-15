@@ -12,6 +12,7 @@ Notes for the next major or minor release of `webmonchow`.
 **Of interest to the User**:
 
 - PR #XYZ one-liner description
+- PR #13 Add REF_M and REF_L messages for translation, pvsd and dasmon
 
 **Of interest to the Developer:**
 

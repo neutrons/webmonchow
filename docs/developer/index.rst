@@ -97,7 +97,7 @@ To manually build the documentation:
 
    $> conda activate webmonchow
    (webmonchow)$> cd /path/to/webmonchow/docs
-   (webmonchow)$> make docs
+   (webmonchow)$> make html
 
 After this, point your browser to
 `file:///path/to/webmonchow/docs/build/html/index.html`
