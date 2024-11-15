@@ -47,6 +47,18 @@
         "ipts": "IPTS-30794",
         "run_number": "42113",
         "facility": "SNS",
-        "data_file": "/SNS/REF_M/IPTS-30794/nexus/REF_M_42113.nxs.h5"}}
+        "data_file": "/SNS/REF_M/IPTS-30794/nexus/REF_M_42113.nxs.h5"}},
+    {"frequency": 0,
+      "message": {"instrument": "REF_L",
+        "ipts": "IPTS-33077",
+        "run_number": "214746",
+        "facility": "SNS",
+        "data_file": "/SNS/REF_L/IPTS-33077/nexus/REF_L_214746.nxs.h5"}},
+    {"frequency": 0,
+      "message": {"instrument": "REF_L",
+        "ipts": "IPTS-33077",
+        "run_number": "214747",
+        "facility": "SNS",
+        "data_file": "/SNS/REF_L/IPTS-33077/nexus/REF_L_214747.nxs.h5"}}
   ]
 }
