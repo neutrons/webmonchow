@@ -263,3 +263,18 @@ If you want additional instrument to show, you need to add content to these file
 Also, if you want to signal that some runs for the instrument are ready for post-processing,
 you need to add them in
 `translation.json <https://github.com/neutrons/webmonchow/blob/next/src/webmonchow/amq/services/translation.json>`_
+
+Adding as Active Instrument in the database
++++++++++++++++++++++++++++++++++++++++++++
+
+Note that for the new instrument to report the status of PVSD and DASMON correctly, i.e. show green
+status boxes for all systems on the page http://localhost/dasmon/arcs, the instrument needs to be
+added as an Active Instrument in the database at: http://localhost/database/dasmon/activeinstrument/.
+The ``"src_name"`` in
+`amq dasmon.json <https://github.com/neutrons/webmonchow/blob/next/src/webmonchow/amq/services/dasmon.json>`_.
+must match the selection in "Has pvsd" or "Has pvstreamer" on the Active Instrument object.
+
+.. image:: ../media/instrument_system_status.png
+    :width: 999px
+    :align: center
+    :alt: instrument system status
