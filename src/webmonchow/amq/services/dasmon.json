@@ -19,6 +19,11 @@
       "message": {"src_name": "dasmon",
         "status": "0"}}
   ],
+  "/topic/SNS.NOM.STATUS.DASMON": [
+    {"frequency": 10,
+      "message": {"src_name": "dasmon",
+        "status": "0"}}
+  ],
   "/topic/SNS.HYSA.APP.DASMON": [
     {"frequency": 10,
       "message":
@@ -79,6 +84,25 @@
         "scanning": false,
         "system_dasmon": 0,
         "system_postprocessing": "Created REF_L reduction script",
+        "system_pvsd": 0,
+        "total_charge": 3.03988e+10,
+        "total_counts": 111735,
+        "total_time": 2993.14
+      }
+    }
+  ],
+  "/topic/SNS.NOM.APP.DASMON": [
+    {"frequency": 10,
+      "message":
+      {"monitors": {"1": 0, "2": 0, "8":  0},
+        "count_rate": 0,
+        "has_states_count": 0,
+        "paused": false,
+        "recording": false,
+        "scan_index": 0,
+        "scanning": false,
+        "system_dasmon": 0,
+        "system_postprocessing": "Created NOM reduction script",
         "system_pvsd": 0,
         "total_charge": 3.03988e+10,
         "total_counts": 111735,

@@ -18,5 +18,10 @@
     {"frequency": 10,
       "message": {"src_name": "pvsd",
         "status": "0"}}
+  ],
+  "/topic/SNS.NOM.STATUS.PVSD": [
+    {"frequency": 10,
+      "message": {"src_name": "pvsd",
+        "status": "0"}}
   ]
 }

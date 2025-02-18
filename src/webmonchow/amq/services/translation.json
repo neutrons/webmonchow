@@ -59,6 +59,12 @@
         "ipts": "IPTS-33077",
         "run_number": "214747",
         "facility": "SNS",
-        "data_file": "/SNS/REF_L/IPTS-33077/nexus/REF_L_214747.nxs.h5"}}
+        "data_file": "/SNS/REF_L/IPTS-33077/nexus/REF_L_214747.nxs.h5"}},
+    {"frequency": 0,
+      "message": {"instrument": "NOM",
+        "ipts": "IPTS-1001",
+        "run_number": "10002",
+        "facility": "SNS",
+        "data_file": "/SNS/NOM/IPTS-1001/nexus/NOM_10002.nxs.h5"}}
   ]
 }
